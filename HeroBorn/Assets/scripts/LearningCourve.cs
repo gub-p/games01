@@ -4,21 +4,35 @@ using UnityEngine;
 
 public class LearningCourve : MonoBehaviour
 {
+    private int CurrentAge = 30;
+    public int AddedAge = 1;
 
-    public int CurrentAge = 30;
+    public float Pi = 3.14f;
+    public string FirstName = "Harrison";
+    public bool IsAuthor = true;
 
+    public Transform CamTransform;
+    public GameObject DirectionLight;
+    public Transform LightTransform;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(30 + 1);
-        Debug.Log(CurrentAge + 1);
+        ComputeAge();
+        Debug.Log($"A string can have variables like {FirstName} inserted directly!");
+
+        var hero = new Character();
+        Debug.LogFormat("Hero: {0} - {1} EXP", hero.name, hero.exp);
+        CamTransform = this.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Time for action - adding comments
+    /// Computes a modified age integer
+    /// </summary>
+    void ComputeAge()
     {
-        
+        Debug.Log(CurrentAge + AddedAge);
     }
 }
